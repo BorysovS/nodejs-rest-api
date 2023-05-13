@@ -1,12 +1,4 @@
-const messages = {
-  400: "Bad request",
-  401: "Unauthtorized",
-  403: "Forbiden",
-  404: "Not Found",
-  409: "Conflict",
-};
-
-const HttpError = (status, message = messages[status]) => {
+const HttpError = (status, message) => {
   const error = new Error(message);
   error.status = status;
   return error;
