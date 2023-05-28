@@ -27,7 +27,7 @@ contactSchema.post('save', handleMongooseError);
 const addSchema  = Joi.object({
   name: Joi.string().min(3).max(20).required(),
   email: Joi.string()
-    .pattern(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)
+    .pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
     .required(),
   phone: Joi.string()
     .pattern(/^\(\d{3}\)\d{3}-\d{2}-\d{2}$/)
