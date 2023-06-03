@@ -7,8 +7,6 @@ const { isValidId, authentificate } = require("../../middlewares");
 
 const router = express.Router();
 
-// router.use(authentificate);
-
 router.get("/",authentificate, ctrl.getAllContacts);
 
 router.get("/:contactId", authentificate, isValidId, ctrl.getContactById);
